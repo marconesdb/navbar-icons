@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with FontAwesome Icons</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    /* Estilos gerais */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    /* Estilos da navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      color: #333;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-nav li {
+      margin-left: 40px;
+      text-align: center;
+    }
+
+    .navbar-nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar-nav a:hover {
+      color: #007bff;
+    }
+
+    .navbar-nav i {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .navbar-toggler {
+      display: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .navbar-toggler span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin-bottom: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-toggler.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggler.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .navbar-toggler.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+
+      .navbar-toggler {
+        display: block;
+      }
+
+      .navbar-nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-nav.show li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      Brand Name
+    </div>
+    <ul class="navbar-nav">
+      <li>
+        <a href="#">
+          <i class=""><img src="rosto.png" alt="" style="width: 50px;"></i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            <i class=""><img src="tratamento-de-beleza (1).png" alt="" style="width: 50px;"></i>
+          About
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            <i class=""><img src="tratamento-de-beleza.png" alt="" style="width: 50px;"></i>
+          Services
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            <i class=""><img src="contact-us.png" alt="" style="width: 50px;"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+    <button class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <script>
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    navbarToggler.addEventListener('click', () => {
+      navbarToggler.classList.toggle('active');
+      navbarNav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
